@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museekd>
+  <domain id="autojoin">
+    <key id="museek"/>
+  </domain>
+  <domain id="buddy.shares">
+    <key id="database">/root/.museekd/config.buddyshares</key>
+  </domain>
+  <domain id="clients">
+    <key id="connectmode">passive</key>
+  </domain>
+  <domain id="clients.bind">
+    <key id="first">3001</key>
+    <key id="last">3009</key>
+  </domain>
+  <domain id="default-ticker">
+    <key id="ticker"/>
+  </domain>
+  <domain id="encoding">
+    <key id="filesystem">utf-8</key>
+    <key id="network">utf-8</key>
+  </domain>
+  <domain id="interfaces">
+    <key id="password">password</key>
+  </domain>
+  <domain id="interfaces.bind">
+    <key id="/tmp/museekd.root"/>
+    <key id="localhost:3010"/>
+  </domain>
+  <domain id="museekd">
+    <key id="version">0.4.0</key>
+  </domain>
+  <domain id="server">
+    <key id="host">server.slsknet.org</key>
+    <key id="password">{{password}}</key>
+    <key id="port">2242</key>
+    <key id="username">{{username}}</key>
+  </domain>
+  <domain id="shares">
+    <key id="database">/root/.museekd/config.shares</key>
+  </domain>
+  <domain id="transfers">
+    <key id="download-dir"/>
+    <key id="download_rate">{{downloadRate}}</key>
+    <key id="download_slots">{{downloadSlots}}</key>
+    <key id="downloads">/root/.museekd/config.downloads</key>
+    <key id="have_buddy_shares">false</key>
+    <key id="incomplete-dir"/>
+    <key id="max_folder_size">1000</key>
+    <key id="only_buddies">false</key>
+    <key id="privilege_buddies">true</key>
+    <key id="trusting_uploads">false</key>
+    <key id="upload_rate">{{uploadRate}}</key>
+    <key id="upload_slots">{{uploadSlots}}</key>
+    <key id="user_warnings">true</key>
+  </domain>
+  <domain id="userinfo">
+    <key id="image">/root/.museekd/config.image</key>
+    <key id="text">{{info}}</key>
+  </domain>
+</museekd>

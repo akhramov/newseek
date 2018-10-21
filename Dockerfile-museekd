@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+WORKDIR /usr/local/src/museek-plus
+
+
+RUN apt-get update
+RUN apt-get install -y python2.7 gcc libxml2-dev libxml++2.6-dev libevent-dev git build-essential cmake
+
+RUN git clone https://github.com/eLvErDe/museek-plus . --depth=1
+
+RUN cmake -DMUSETUP=1 -DPYMUCIPHER=0 -DMUSEEQ=0
+RUN make install
+
+CMD ["bash", "-c", "muscan -s /root/share && /usr/local/bin/museekd"]

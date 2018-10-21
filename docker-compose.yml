@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "newseek"
+  museekdaemon:
+    build:
+      context: .
+      dockerfile: Dockerfile-museekd
+    volumes:
+      - "$DATA_FOLDER:/root/.museekd"
+      - "$SHARED_FOLDER:/root/share"
+      - "$DOWNLOADS_FOLDER:/root/downloads"
+    restart: on-failure
+    ports:
+      - "3001-3011:3001-3011"
